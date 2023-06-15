@@ -1,0 +1,11 @@
+services:
+  app:
+    container_name: next-app
+    build: ./docker/node
+    image: next-app
+    volumes:
+      - ./src:/var/www/src
+    tty: true
+    working_dir: /var/www/src
+    ports:
+      - "3000:3000"
